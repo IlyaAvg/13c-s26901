@@ -37,10 +37,30 @@ generator = SquareGenerator()
 list = SquareGenerator.generate_squares(generator, 1, 10)
 print("Task 5 - Exceptions: " + str(list))
 
-# square_package/__init__.py (empty)
-# square_package/square_generator.py
 from square_generator import SquareGenerator
 generator = SquareGenerator()
 list = generator.generate_squares(1, 10)
 print("Task 6 - Modules: " + str(list))
 
+# Task 8
+class CubicGenerator(SquareGenerator):
+    def generate_cubes(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start.")
+        return [x**3 for x in range(start, end+1)]
+generator = CubicGenerator()
+list = generator.generate_cubes(1, 10)
+print("Task 8 - Inheritance: " + str(list))
+
+# Task 9
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start.")
+        if start < end:
+            return [x**2 for x in range(start, end+2)]
+        else:
+            raise ValueError("Start of the range must be less than or equal to end.")
+generator = CubicGenerator()
+list = generator.generate_squares(1, 10)
+print("Task 9 - Function Overriding: " + str(list))
