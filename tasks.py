@@ -1,3 +1,5 @@
+global list
+
 # Task 1
 squares_list = [x**2 for x in range(1, 11)]
 print("Task 1 - List Comprehensions:", squares_list)
@@ -14,3 +16,13 @@ class SquareGenerator:
 
 list = SquareGenerator.generate_squares(SquareGenerator, 1,10)
 print("Task 3 - Classes: "+str(list))
+
+#Task 4
+import math
+
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        return [math.sqrt(x) for x in list]
+
+list = SquareGenerator.generate_squares(SquareGenerator, 1, 10)
+print("Task 4 - Libraries: " + str(list))
