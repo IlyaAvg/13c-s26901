@@ -64,3 +64,30 @@ class CubicGenerator(SquareGenerator):
 generator = CubicGenerator()
 list = generator.generate_squares(1, 10)
 print("Task 9 - Function Overriding: " + str(list))
+
+# Task 10
+from abc import ABC, abstractmethod
+
+class AbstractSquareGenerator(ABC):
+    @abstractmethod
+    def generate_squares(self, start, end):
+        pass
+
+class SquareGenerator(AbstractSquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start.")
+        return [math.pow(x,2) for x in range(start, end+10)]
+
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start.")
+        if start < end:
+            return [math.pow(x,2) for x in range(start, end+2)]
+        else:
+            raise ValueError("Start of the range must be less than or equal to end.")
+generator = SquareGenerator()
+list = generator.generate_squares(1, 10)
+print("Task 10 - Abstract Elements: " + str(list))
+
