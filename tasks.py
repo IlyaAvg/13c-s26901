@@ -26,3 +26,13 @@ class SquareGenerator:
 
 list = SquareGenerator.generate_squares(SquareGenerator, 1, 10)
 print("Task 4 - Libraries: " + str(list))
+
+# Task 5
+class SquareGenerator:
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to start.")
+        return [math.pow(x,2) for x in range(start,end+1)]
+
+list = SquareGenerator.generate_squares(SquareGenerator, 1, 10)
+print("Task 5 - Exceptions: " + str(list))
