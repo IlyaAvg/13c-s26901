@@ -84,10 +84,10 @@ class CubicGenerator(SquareGenerator):
         if end < start:
             raise ValueError("End of the range must be greater than or equal to start.")
         if start < end:
-            return [math.pow(x,2) for x in range(start, end+2)]
+            return [math.pow(x,3) for x in range(start, end+2)]
         else:
             raise ValueError("Start of the range must be less than or equal to end.")
-generator = SquareGenerator()
+generator = CubicGenerator()
 list = generator.generate_squares(1, 10)
 print("Task 10 - Abstract Elements: " + str(list))
 
